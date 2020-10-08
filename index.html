@@ -3,15 +3,18 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		<title>OneLink test</title>
+		<script src="https://theapicompany.com/deviceAPI.js?id=deviceAPI-123456"></script>
+		<title>Test redirection by device brand</title>
 	</head>
 	<body>
-		<div class="container mt-4">
-			<ul class="list-group">
-				<li class="list-group-item"><a href="https://go.onelink.me/app/81add90e">https://go.onelink.me/app/81add90e</a></li>
-				<li class="list-group-item"><a href="https://app.adjust.com/vu0t8ii?idfa=0F0AEB2C-EC63-4AA9-B190-5A5C2B6D16E1">https://app.adjust.com/vu0t8ii?idfa=0F0AEB2C-EC63-4AA9-B190-5A5C2B6D16E1</a></li>
-			</ul>
-		</div>
+		<script>
+			var devicebrand = deviceAPI.deviceBrand;
+			if(devicebrand == "Samsung") {
+				window.location.href = "https://app.adjust.com/ujei1h3";
+			}
+			else {
+				window.location.href = "https://app.adjust.com/8e49vro";
+			}
+		</script>
 	</body>
 </html>
