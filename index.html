@@ -3,12 +3,12 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<script src="https://theapicompany.com/deviceAPI.js?id=deviceAPI-123456"></script>
+		<script src="https://bestiejs.github.io/platform.js/vendor/platform-1.3.5.js"></script>
 		<title>Test redirection by device brand</title>
 	</head>
 	<body>
 		<script>
-			var devicebrand = deviceAPI.deviceBrand;
+			var devicebrand = platform.manufacturer;
 			if(devicebrand == "Samsung") {
 				window.location.href = "https://app.adjust.com/ujei1h3";
 			}
