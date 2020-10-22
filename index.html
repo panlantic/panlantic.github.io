@@ -35,21 +35,30 @@
         return navigator.userAgent.match(/SAMSUNG|SGH-[I|N|T]|GT-[I|P|N]|SM-[N|P|T|Z|G]|SHV-E|SCH-[I|J|R|S]|SPH-L/i)
     }
 
+    // get label param
+    var url = window.location.href;
+    var captured = /label=([^&]+)/.exec(url);
+    var label = '';
+    if (captured) {
+        label = captured[1];
+    }
+    
+    // do redirect based on device model
     if (is_mobile_or_tablet()) {
         if (is_samsung_browser()) {
-            window.location.href = "https://app.adjust.com/ujei1h3";
+            window.location.href = "https://app.adjust.com/ujei1h3?label=" + label;
         } else {
             if (is_ios()) {
-                window.location.href = "https://app.adjust.com/i64hb6o";
+                window.location.href = "https://app.adjust.com/i64hb6o?label=" + label;
             } else if (is_kindle()) {
-                window.location.href = "https://app.adjust.com/c7vez3q";
+                window.location.href = "https://app.adjust.com/c7vez3q?label=" + label;
             }
             else {
-                window.location.href = "https://app.adjust.com/8e49vro";
+                window.location.href = "https://app.adjust.com/8e49vro?label=" + label;
             }
         }
     } else {
-        window.location.href = "https://app.adjust.com/70oq1lj";
+        window.location.href = "https://app.adjust.com/70oq1lj?label=" + label;
     }
 </script>
 </body>
