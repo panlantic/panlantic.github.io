@@ -27,15 +27,19 @@
             || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
     }
 
-    function is_kindle(){
+    function is_kindle() {
         return /Kindle|Silk|KFAPW|KFARWI|KFASWI|KFFOWI|KFJW|KFMEWI|KFOT|KFSAW|KFSOWI|KFTBW|KFTHW|KFTT|WFFOWI|KFMUWI|KFKAWI|KFSUWI|KFDOWI|KFAUWI|KFGIWI|KFTBWI|KFSAWA|KFTHWI|KFTHWA|KFAPWA|KFAPWI|KFJWA|KFJWI"/i.test(navigator.userAgent)
+    }
+    
+    function is_mac_os() {
+        return navigator.platform.indexOf('Mac') > -1
     }
 
     function is_samsung_browser() {
         return navigator.userAgent.match(/SAMSUNG|SGH-[I|N|T]|GT-[I|P|N]|SM-[N|P|T|Z|G]|SHV-E|SCH-[I|J|R|S]|SPH-L/i)
     }
 
-    // get label param
+    // get label param if exists
     var url = window.location.href;
     var captured = /label=([^&]+)/.exec(url);
     var label = '';
@@ -48,7 +52,7 @@
         if (is_samsung_browser()) {
             window.location.href = "https://app.adjust.com/ujei1h3?label=" + label;
         } else {
-            if (is_ios()) {
+            if (is_ios() || is_mac_os()) {
                 window.location.href = "https://app.adjust.com/i64hb6o?label=" + label;
             } else if (is_kindle()) {
                 window.location.href = "https://app.adjust.com/c7vez3q?label=" + label;
