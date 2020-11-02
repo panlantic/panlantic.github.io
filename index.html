@@ -31,7 +31,7 @@
         return /Kindle|Silk|KFAPW|KFARWI|KFASWI|KFFOWI|KFJW|KFMEWI|KFOT|KFSAW|KFSOWI|KFTBW|KFTHW|KFTT|WFFOWI|KFMUWI|KFKAWI|KFSUWI|KFDOWI|KFAUWI|KFGIWI|KFTBWI|KFSAWA|KFTHWI|KFTHWA|KFAPWA|KFAPWI|KFJWA|KFJWI"/i.test(navigator.userAgent)
     }
     
-    function is_mac_os() {
+    function is_mac() {
         return navigator.platform.indexOf('Mac') > -1
     }
 
@@ -52,7 +52,7 @@
         if (is_samsung_browser()) {
             window.location.href = "https://app.adjust.com/ujei1h3?label=" + label;
         } else {
-            if (is_ios() || is_mac_os()) {
+            if (is_ios() || is_mac()) {
                 window.location.href = "https://app.adjust.com/i64hb6o?label=" + label;
             } else if (is_kindle()) {
                 window.location.href = "https://app.adjust.com/c7vez3q?label=" + label;
